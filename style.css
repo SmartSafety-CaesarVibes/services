@@ -4,14 +4,10 @@ body {
 
 /* General Navbar Styles */
 .navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #15616d;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #15616d;
     padding: 0.5rem 1rem;
 }
 
@@ -101,10 +97,6 @@ a:active {
 
 /* Footer Styles */
 .site-footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     background-color: #15616d;
     color: #fff;
     padding: 2rem 1rem;
