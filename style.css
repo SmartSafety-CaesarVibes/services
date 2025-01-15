@@ -1,5 +1,7 @@
+
 body {
     background-color: #FFECD1;
+    margin: 0; /* Ensure no margin on body */
 }
 
 /* General Navbar Styles */
@@ -9,6 +11,12 @@ body {
     align-items: center;
     background-color: #15616d;
     padding: 0.5rem 1rem;
+    position: fixed; /* Fixed position for scrolling effect */
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.5s; /* Smooth transition */
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .logo img {
@@ -41,7 +49,7 @@ body {
 
 /* Hamburger Menu (for mobile) */
 .hamburger {
-    display: none;
+    display: none; /* Initially hidden, shown in media query */
     flex-direction: column;
     cursor: pointer;
 }
@@ -56,7 +64,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Hide nav links by default */
         flex-direction: column;
         width: 100%;
         background-color: #15616d;
@@ -66,11 +74,11 @@ body {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Show nav links when active */
     }
 
     .hamburger {
-        display: flex;
+        display: flex; /* Show hamburger icon */
     }
 }
 
@@ -79,19 +87,7 @@ a {
     text-decoration: none;
 }
 
-a:link {
-    color: #001524;
-}
-  
-a:visited {
-    color: #001524;
-}
-  
-a:hover {
-    color: #001524;
-}
-
-a:active {
+a:link, a:visited, a:hover, a:active {
     color: #001524;
 }
 
@@ -101,6 +97,7 @@ a:active {
     color: #fff;
     padding: 2rem 1rem;
     text-align: center;
+    margin: 0; /* Remove margin to eliminate border effect */
 }
 
 .site-footer .container {
@@ -150,17 +147,21 @@ section {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 125px; /* Add margin to ensure the first section is not hidden by the navbar */
 }
+
 .block:nth-child(odd) {
     text-align: left;
     margin-left: 50px;
     margin-right: auto;
 }
+
 .block:nth-child(even) {
     text-align: right;
     margin-left: auto;
     margin-right: 50px;
 }
+
 h1, h2, h3 {
     color: #15616D;
 }
