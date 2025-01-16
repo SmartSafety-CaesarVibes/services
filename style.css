@@ -1,0 +1,262 @@
+body {
+    background-color: #FFECD1;
+    margin: 0;
+    /* Ensure no margin on body */
+}
+
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #15616d;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    /* Fixed position for scrolling effect */
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+    transition: top 0.5s;
+    /* Smooth transition */
+    z-index: 1000;
+    /* Ensure it stays on top */
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+/* Hamburger Menu (for mobile) */
+.hamburger {
+    display: none;
+    /* Initially hidden, shown in media query */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    /* Navbar Links: Da colonna a riga orizzontale */
+    .nav-links {
+        display: none;
+        flex-direction: row;
+        /* Cambia da verticale a orizzontale */
+        justify-content: center;
+        gap: 20px;
+        position: absolute;
+        top: 45%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        background-color: transparent;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        display: flex;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    /* Animazione dell'Hamburger */
+    .hamburger {
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background-color: #15616d;
+    }
+
+    .hamburger span {
+        background: white;
+        height: 3px;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+}
+
+a {
+    color: #001524;
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #001524;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #15616d;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 0;
+    /* Remove margin to eliminate border effect */
+}
+
+.site-footer .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.site-footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.site-footer a {
+    color: #00bcd4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #0097a7;
+}
+
+.site-footer .social-links a {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+}
+
+.footer-logo {
+    
+    max-width: 200px;
+    margin-bottom: 0rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .site-footer p {
+        font-size: 0.875rem;
+    }
+
+    .site-footer .social-links a {
+        margin: 0.25rem;
+    }
+}
+
+/* Blocchi principali (sections) */
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 125px; /* Aggiungi margine per evitare che la navbar copra il contenuto */
+    height: auto; /* Forza l'altezza automatica, adattandosi al contenuto */
+    min-height: 100px; /* Imposta un'altezza minima per evitare che i blocchi diventino troppo piccoli */
+    display: flex; /* Flexbox per allineare il contenuto */
+    flex-direction: column; /* Allinea i contenuti in verticale */
+    justify-content: flex-start; /* Allinea il contenuto in alto */
+}
+
+/* Blocchi dispari */
+.block:nth-child(odd) {
+    text-align: left;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+/* Blocchi pari */
+.block:nth-child(even) {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+/* Rimuovi margini extra tra i paragrafi (se applicato) */
+section p {
+    margin: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+        max-width: 80%;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 125px;
+        /* Add margin to ensure the first section is not hidden by the navbar */
+    }
+    
+    .block:nth-child(even) {
+        text-align: right;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    
+    .block:nth-child(odd) {
+        text-align: left;
+        margin-left: 5%;
+        margin-right: 10%;
+    }
+}
+
+
+h1,
+h2,
+h3 {
+    color: #15616D;
+}
